@@ -5,7 +5,6 @@ import { useAuthStore } from '../store/auth';
 
 const Login = () => {
     const navigate = useNavigate();
-    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
@@ -17,7 +16,6 @@ const Login = () => {
     }, []);
 
     const resetForm = () => {
-        setUsername('');
         setPassword('');
     };
 
@@ -29,11 +27,11 @@ const Login = () => {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        const { data, error } = await login(email, password);
+        const { error } = await login(email, password);
         if (error) {
             alert(error);
         } else {
-            navigate('/');
+            navigate('/hlogin');
             resetForm();
         }
     };

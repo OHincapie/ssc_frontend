@@ -3,6 +3,21 @@ import axios from './axios';
 import jwt_decode from 'jwt-decode';
 import Cookies from 'js-cookie';
 
+
+export const fetchUsers = async () => {
+    try {
+        const { data, status } = await axios.get('/users');
+        console.log("OK");
+        return { data, error: null };
+    } catch (error) {
+        console.log("error")
+        return {
+            data: null,
+            error: error?.response?.data.message || 'Something went wrong',
+        };
+    }
+};
+
 export const login = async (email, password) => {
     try {
         const { data, status } = await axios.post('/login', {

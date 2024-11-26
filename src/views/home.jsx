@@ -52,7 +52,7 @@ export const LoggedOutView = ({ title = 'Bienvenido al sistema de consulta del c
                         <button className="btn w-100" style={{
                  
                             background: '#0197F6'
-                        }}>Register</button>
+                        }}>Registro</button>
                     </Link>
 
                 </div>

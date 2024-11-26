@@ -9,6 +9,8 @@ import PrivateRoute from '../layouts/PrivateRoute';
 import Private from '../views/private';
 import { NewPassword } from '../views/new_password';
 import { MailPassword } from '../views/mail';
+import UserList from '../views/user_list';
+import { HomeLogin } from '../views/home_login';
 
 
 export const getRoutes = () => createBrowserRouter([
@@ -42,5 +44,13 @@ export const getRoutes = () => createBrowserRouter([
             <PrivateRoute>
                 <Private />
             </PrivateRoute>
+    },
+    {
+        path: '/users',
+        element: <UserList />
+    },
+    {
+        path: '/hlogin',
+        element: <HomeLogin />
     }
 ]);
